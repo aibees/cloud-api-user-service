@@ -1,0 +1,31 @@
+server:
+  port: 19003
+
+spring:
+  application:
+    name: USER-SERVICE # DB lb://{URI} 에서 URI는 spring.application.name과 매칭된다.
+#  r2dbc:
+#    url: r2dbc:mysql://192.168.75.87:3333/aibees?serverTimezone=UTC&characterEncoding=UTF-8&sslMode=DISABLED
+#    username: aibees
+#    password: qkrqwe12#
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.75.87:3333/aibees?serverTimezone=UTC&characterEncoding=UTF-8&sslMode=DISABLED
+    username: aibees
+    password: qkrqwe12#
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate.format_sql: true
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    serviceUrl:
+      defaultZone : http://aibees1129:qkr12wns3!@localhost:19001/eureka/
+  instance:
+    prefer-ip-address: true
