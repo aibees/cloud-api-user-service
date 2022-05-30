@@ -1,9 +1,6 @@
 package com.cloud.msa.user.domain.entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,6 +13,7 @@ import java.time.LocalDateTime;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 @Table(name="user_detail")
 public class UserDetail {
     @Id
@@ -30,7 +28,4 @@ public class UserDetail {
 
     @Column
     private String otp;
-
-    @Column(name="update_date")
-    private LocalDateTime updateDt;
 }
